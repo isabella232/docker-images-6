@@ -350,7 +350,7 @@ oracle.install.db.config.asm.diskGroup=
 #
 # Applicable only when oracle.install.db.config.starterdb.storage=ASM_SYSTEM 
 #-------------------------------------------------------------------------------
-oracle.install.db.config.asm.ASMSNMPPassword=
+oracle.install.db.config.asm.ASMSNMPPassword=Oracle123
 
 #------------------------------------------------------------------------------
 # Specify the My Oracle Support Account Username.

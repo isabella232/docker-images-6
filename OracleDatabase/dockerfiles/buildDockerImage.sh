@@ -86,6 +86,9 @@ if [ $((ENTERPRISE + STANDARD + EXPRESS)) -gt 1 ]; then
   usage
 elif [ $ENTERPRISE -eq 1 ]; then
   EDITION="ee"
+elif [ $STANDARD -eq 1 ] && [ "$VERSION" = "11.2.0.2" ]; then
+  EDITION="se2"
+  DOCKEROPS="--shm-size=1G" 
 elif [ $STANDARD -eq 1 ]; then
   EDITION="se2"
 elif [ $EXPRESS -eq 1 ] && [ "$VERSION" = "12.1.0.2" ]; then
