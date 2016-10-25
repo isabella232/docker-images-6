@@ -49,10 +49,10 @@ trap _term SIGTERM
 # Set SIGKILL handler
 trap _kill SIGKILL
 
-/etc/init.d/oracle-xe start | grep -qc "Oracle Database 11g Express Edition is not configured"
-if [ "$?" == "0" ]; then
-   createDB;
-fi;
+#/etc/init.d/oracle-xe start | grep -qc "Oracle Database 11g Express Edition is not configured"
+#if [ "$?" == "0" ]; then
+#   createDB;
+#fi;
 
 echo "#########################"
 echo "DATABASE IS READY TO USE!"
