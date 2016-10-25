@@ -105,9 +105,9 @@ RUN cd $INSTALL_DIR       && \
     [ $? == 3 ] 
 
 RUN rm -rf $INSTALL_DIR/database && \
-    ln -s $ORACLE_BASE/$PWD_FILE $HOME/ && \
-    echo "DEDICATED_THROUGH_BROKER_LISTENER=ON"  >> $ORACLE_HOME/network/admin/listener.ora && \
-    echo "DIAG_ADR_ENABLED = off"  >> $ORACLE_HOME/network/admin/listener.ora;
+    ln -s $ORACLE_BASE/$PWD_FILE $HOME/ 
+
+COPY listener.ora tnsnames.ora $ORACLE_HOME/network/admin/
 
 # Check whether Perl is working
 RUN chmod u+x $INSTALL_DIR/installPerl.sh && \
@@ -124,5 +124,5 @@ WORKDIR /home/oracle
 EXPOSE 1521 5500
     
 # Define default command to start Oracle Database. 
-###CMD $ORACLE_BASE/$RUN_FILE
-CMD sleep 100000
+#CMD $ORACLE_BASE/$RUN_FILE
+#CMD sleep 100000
