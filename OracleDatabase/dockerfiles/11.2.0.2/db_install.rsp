@@ -139,12 +139,12 @@ oracle.install.db.customComponents=oracle.server:11.2.0.1.0,oracle.sysman.ccr:10
 #------------------------------------------------------------------------------
 # The DBA_GROUP is the OS group which is to be granted OSDBA privileges.
 #------------------------------------------------------------------------------
-oracle.install.db.DBA_GROUP=
+oracle.install.db.DBA_GROUP=dba
 
 #------------------------------------------------------------------------------
 # The OPER_GROUP is the OS group which is to be granted OSOPER privileges.
 #------------------------------------------------------------------------------
-oracle.install.db.OPER_GROUP=
+oracle.install.db.OPER_GROUP=dba
 
 #------------------------------------------------------------------------------
 # Specify the cluster node names selected during the installation.
@@ -321,7 +321,7 @@ oracle.install.db.config.starterdb.automatedBackup.ospwd=
 # - FILE_SYSTEM_STORAGE
 # - ASM_STORAGE
 #------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.storageType=
+oracle.install.db.config.starterdb.storageType=FILE_SYSTEM_STORAGE
 
 #-------------------------------------------------------------------------------
 # Specify the database file location which is a directory for datafiles, control
@@ -329,14 +329,14 @@ oracle.install.db.config.starterdb.storageType=
 #
 # Applicable only when oracle.install.db.config.starterdb.storage=FILE_SYSTEM 
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.fileSystemStorage.dataLocation=
+oracle.install.db.config.starterdb.fileSystemStorage.dataLocation=/opt/oracle/datafiles
 
 #-------------------------------------------------------------------------------
 # Specify the backup and recovery location.
 #
 # Applicable only when oracle.install.db.config.starterdb.storage=FILE_SYSTEM 
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.fileSystemStorage.recoveryLocation=
+oracle.install.db.config.starterdb.fileSystemStorage.recoveryLocation=/opt/oracle/datafilesbackup
 
 #-------------------------------------------------------------------------------
 # Specify the existing ASM disk groups to be used for storage.
