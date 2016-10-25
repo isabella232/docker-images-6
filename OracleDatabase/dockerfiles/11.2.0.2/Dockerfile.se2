@@ -89,7 +89,7 @@ RUN cd $INSTALL_DIR       && \
     [ $? == 3 ] 
 
 RUN rm -rf $INSTALL_DIR/database && \
-    ln -s $ORACLE_BASE/$PWD_FILE $HOME/ \
+    ln -s $ORACLE_BASE/$PWD_FILE $HOME/ && \
     echo "DEDICATED_THROUGH_BROKER_LISTENER=ON"  >> $ORACLE_HOME/network/admin/listener.ora && \
     echo "DIAG_ADR_ENABLED = off"  >> $ORACLE_HOME/network/admin/listener.ora;
 
@@ -99,8 +99,7 @@ RUN chmod u+x $INSTALL_DIR/installPerl.sh && \
     $INSTALL_DIR/installPerl.sh
 
 USER oracle
-RUN $ORACLE_BASE/oraInventory/orainstRoot.sh && \
-    $ORACLE_HOME/root.sh && ###\
+RUN $ORACLE_HOME/root.sh && \
     rm -rf $INSTALL_DIR
 
 USER oracle
