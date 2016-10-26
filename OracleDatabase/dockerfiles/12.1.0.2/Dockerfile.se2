@@ -97,8 +97,6 @@ RUN $ORACLE_BASE/oraInventory/orainstRoot.sh && \
     rm -rf $INSTALL_DIR
 
 USER oracle
-RUN $ORACLE_BASE/$RUN_FILE burn
-USER oracle
 WORKDIR /home/oracle
 
 EXPOSE 1521 5500

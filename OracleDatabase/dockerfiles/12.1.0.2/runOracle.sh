@@ -120,8 +120,4 @@ echo "#########################"
 echo "DATABASE IS READY TO USE!"
 echo "#########################"
 
-if [[ (($# == 0)) || "burn" != $1 ]]; then
-  tail -f $ORACLE_BASE/diag/rdbms/*/*/trace/alert*.log &
-  childPID=$!
-fi
 wait $childPID
