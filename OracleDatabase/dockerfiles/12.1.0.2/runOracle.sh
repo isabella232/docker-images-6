@@ -120,4 +120,6 @@ echo "#########################"
 echo "DATABASE IS READY TO USE!"
 echo "#########################"
 
+tail -f $ORACLE_BASE/diag/rdbms/*/*/trace/alert*.log &
+childPID=$!
 wait $childPID
