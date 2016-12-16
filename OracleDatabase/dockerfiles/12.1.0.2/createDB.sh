@@ -25,9 +25,10 @@ if [ "$ORACLE_PDB" == "" ]; then
   ORACLE_PDB=ORCLPDB1
 fi;
 
-# Auto generate ORACLE PWD
-ORACLE_PWD="`openssl rand -base64 8`1"
-echo "ORACLE AUTO GENERATED PASSWORD FOR SYS, SYSTEM AND PDBAMIN: $ORACLE_PWD";
+if [ "$ORACLE_PWD" == "" ]; then
+    ORACLE_PWD="oracle"
+fi
+echo "ORACLE PASSWORD FOR SYS, SYSTEM AND PDBAMIN: $ORACLE_PWD";
 
 # Replace place holders in response file
 cp $ORACLE_BASE/$CONFIG_RSP $ORACLE_BASE/dbca.rsp
@@ -47,6 +48,7 @@ echo "LISTENER =
     (ADDRESS = (PROTOCOL = TCP)(HOST = 0.0.0.0)(PORT = 1521)) 
   ) 
 ) 
+USE_SID_AS_SERVICE_listener=on
 
 " > $ORACLE_HOME/network/admin/listener.ora
 
